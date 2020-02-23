@@ -7,17 +7,15 @@ import warnings
 
 from base64 import b64encode
 
-from .compat import urlparse, str, basestring
-from .cookies import extract_cookies_to_jar
-from ._internal_utils import to_native_string
-from .utils import parse_dict_header
+from requests.compat import urlparse, str, basestring
+from requests.cookies import extract_cookies_to_jar
+from requests._internal_utils import to_native_string
+from requests.utils import parse_dict_header
 
 CONTENT_TYPE_FORM_URLENCODED = 'application/x-www-form-urlencoded'
 CONTENT_TYPE_MULTI_PART = 'multipart/form-data'
 
 ################################################################################   
-#class DigestAuthHack(HTTPDigestAuth):
-#    pass
 
 class AuthBase(object):
     """Base class that all auth implementations derive from"""
@@ -246,3 +244,6 @@ class HTTPDigestAuth(AuthBase):
 
     def __ne__(self, other):
         return not self == other
+
+class DigestAuthHack(HTTPDigestAuth):
+    pass

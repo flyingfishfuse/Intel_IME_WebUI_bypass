@@ -1,8 +1,9 @@
 from selenium.webdriver import Firefox, Chrome, Ie, Opera, Safari, PhantomJS, Android, Remote
 from seleniumrequests.request import RequestMixin
 import argparse
-
 #OPTIONS!
+global arguments
+
 parser = argparse.ArgumentParser(description = 'Intel IME Admin Bypass Tool, \
                                                 CVE-2017-5689')
 parser.add_argument('--target',
