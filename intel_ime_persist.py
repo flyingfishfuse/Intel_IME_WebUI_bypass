@@ -59,6 +59,8 @@
 ################################################################################
 import os
 import re
+import main
+import argparse
 import requests
 import hacked_digest_auth
 import hacked_seleniumrequest
@@ -72,7 +74,7 @@ sneaky_useragent    =   'Mozilla/5.0 (X11; Linux x86_64; rv:28.0) Gecko/20100101
                         Firefox/28.0'
 sneaky_headers      = { "Accept": "text/html,application/xhtml+xml,application/\
                         xml;q=0.9,image/webp,*/*;q=0.8",
-                        'User-Agent' : useragent,
+                        'User-Agent' : sneaky_useragent,
                         "Accept-Language": "en-US,en;q=0.5",
                         "Accept-Encoding": "gzip, deflate",
                         "Connection": "close",
