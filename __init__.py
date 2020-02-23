@@ -8,26 +8,16 @@ class Firefox(Firefox, RequestMixin):
 class Chrome(Chrome, RequestMixin):
     pass
 
-
-class Ie(Ie, RequestMixin):
-    pass
-
-
-class Opera(Opera, RequestMixin):
-    pass
-
-
-class Safari(Safari, RequestMixin):
-    pass
-
-
-class PhantomJS(PhantomJS, RequestMixin):
-    pass
-
-
-class Android(Android, RequestMixin):
-    pass
-
-
-class Remote(Remote, RequestMixin):
-    pass
+#not used for this 
+#class Ie(Ie, RequestMixin):
+#    pass
+#class Opera(Opera, RequestMixin):
+#    pass
+#class Safari(Safari, RequestMixin):
+#    pass
+#class PhantomJS(PhantomJS, RequestMixin):
+#    pass
+#class Android(Android, RequestMixin):
+#    pass
+#class Remote(Remote, RequestMixin):
+#    pass
