@@ -63,7 +63,6 @@ import re
 import argparse
 import requests
 import hacked_digest_auth
-import hacked_seleniumrequest
 from hacked_digest_auth import DigestAuthHack
 
 parser = argparse.ArgumentParser(description = 'Intel IME Admin Bypass Tool, \

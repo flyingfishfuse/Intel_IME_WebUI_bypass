@@ -30,7 +30,7 @@ class HTTPDigestAuth(AuthBase):
         self.username = username
         self.password = password
 ################################################################################
-        #INSERT HACK
+        #INSERT HACK , IT IS TURNED ON BY DEFAULT!
         self.desired_hash_response = desired_hash_response
 ################################################################################
         # Keep state in per-thread local storage

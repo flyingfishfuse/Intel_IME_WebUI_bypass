@@ -4,7 +4,6 @@ from seleniumrequests.request import RequestMixin
 class Firefox(Firefox, RequestMixin):
     pass
 
-
 class Chrome(Chrome, RequestMixin):
     pass
 
